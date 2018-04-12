@@ -7,23 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D93B90BF3F41FBC3A30832 /* Pods_XML_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F19BA89A8549F5D29D330C7 /* Pods_XML_Example.framework */; };
 		25D398D32011C6E600B200BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D398D22011C6E600B200BE /* AppDelegate.swift */; };
 		25D398D52011C6E600B200BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25D398D42011C6E600B200BE /* Assets.xcassets */; };
 		25D398D82011C6E600B200BE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D398D62011C6E600B200BE /* MainMenu.xib */; };
 		25D398DF2011C71800B200BE /* books.xml in Resources */ = {isa = PBXBuildFile; fileRef = 25D398DE2011C71800B200BE /* books.xml */; };
-		7E1878DB19ECB82B00487429 /* GlimpseXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1878DA19ECB82B00487429 /* GlimpseXML.swift */; };
-		7E794B4F1B4C0C9800ADD651 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E794B4E1B4C0C9800ADD651 /* libxml2.tbd */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		25D398E02011C72900B200BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E1878B519ECB7DC00487429 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E1878BD19ECB7DC00487429;
-			remoteInfo = GlimpseXML;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		25D398D02011C6E600B200BE /* XML Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XML Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,14 +22,10 @@
 		25D398D92011C6E600B200BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25D398DA2011C6E600B200BE /* XML_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XML_Example.entitlements; sourceTree = "<group>"; };
 		25D398DE2011C71800B200BE /* books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = books.xml; sourceTree = "<group>"; };
+		42E26DAC398FF9343ED50D5B /* Pods-XML Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XML Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-XML Example/Pods-XML Example.release.xcconfig"; sourceTree = "<group>"; };
 		7E0E4D441A8CEDEF00D3830F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		7E1878BE19ECB7DC00487429 /* GlimpseXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlimpseXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E1878C219ECB7DC00487429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E1878C319ECB7DC00487429 /* GlimpseXML-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GlimpseXML-Bridging-Header.h"; sourceTree = "<group>"; };
-		7E1878DA19ECB82B00487429 /* GlimpseXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlimpseXML.swift; sourceTree = "<group>"; };
-		7E1878DC19ECB8D200487429 /* GlimpseXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlimpseXML.h; sourceTree = "<group>"; };
-		7E794B4E1B4C0C9800ADD651 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		7E7BDE441A93911100C72288 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		9F19BA89A8549F5D29D330C7 /* Pods_XML_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XML_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A17811E887A6B86F44AAA1E6 /* Pods-XML Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XML Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XML Example/Pods-XML Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,14 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E1878BA19ECB7DC00487429 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E794B4F1B4C0C9800ADD651 /* libxml2.tbd in Frameworks */,
+				04D93B90BF3F41FBC3A30832 /* Pods_XML_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,94 +53,64 @@
 			path = "XML Example";
 			sourceTree = "<group>";
 		};
+		7B8E5D58EA0BB57D0217DE6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A17811E887A6B86F44AAA1E6 /* Pods-XML Example.debug.xcconfig */,
+				42E26DAC398FF9343ED50D5B /* Pods-XML Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7E1878B419ECB7DC00487429 = {
 			isa = PBXGroup;
 			children = (
 				7E0E4D441A8CEDEF00D3830F /* README.md */,
-				7E1878C019ECB7DC00487429 /* GlimpseXML */,
 				25D398D12011C6E600B200BE /* XML Example */,
 				7E1878BF19ECB7DC00487429 /* Products */,
+				7B8E5D58EA0BB57D0217DE6B /* Pods */,
+				AE4F3FCC74A7D824F79A7726 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		7E1878BF19ECB7DC00487429 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7E1878BE19ECB7DC00487429 /* GlimpseXML.framework */,
 				25D398D02011C6E600B200BE /* XML Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7E1878C019ECB7DC00487429 /* GlimpseXML */ = {
+		AE4F3FCC74A7D824F79A7726 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E1878DA19ECB82B00487429 /* GlimpseXML.swift */,
-				7E1878C319ECB7DC00487429 /* GlimpseXML-Bridging-Header.h */,
-				7E1878DC19ECB8D200487429 /* GlimpseXML.h */,
-				7E1878C119ECB7DC00487429 /* Supporting Files */,
+				9F19BA89A8549F5D29D330C7 /* Pods_XML_Example.framework */,
 			);
-			path = GlimpseXML;
-			sourceTree = "<group>";
-		};
-		7E1878C119ECB7DC00487429 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7E7BDE441A93911100C72288 /* module.modulemap */,
-				7E794B4E1B4C0C9800ADD651 /* libxml2.tbd */,
-				7E1878C219ECB7DC00487429 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		7E1878BB19ECB7DC00487429 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		25D398CF2011C6E600B200BE /* XML Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25D398DB2011C6E600B200BE /* Build configuration list for PBXNativeTarget "XML Example" */;
 			buildPhases = (
+				C149E69CD89DCB3F3E301276 /* [CP] Check Pods Manifest.lock */,
 				25D398CC2011C6E600B200BE /* Sources */,
 				25D398CD2011C6E600B200BE /* Frameworks */,
 				25D398CE2011C6E600B200BE /* Resources */,
+				5FE42BA579EA8CE2DFF4BACB /* [CP] Embed Pods Frameworks */,
+				A3DCB09DF9405AE0B743E511 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				25D398E12011C72900B200BE /* PBXTargetDependency */,
 			);
 			name = "XML Example";
 			productName = "XML Example";
 			productReference = 25D398D02011C6E600B200BE /* XML Example.app */;
 			productType = "com.apple.product-type.application";
-		};
-		7E1878BD19ECB7DC00487429 /* GlimpseXML */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E1878D419ECB7DC00487429 /* Build configuration list for PBXNativeTarget "GlimpseXML" */;
-			buildPhases = (
-				7E1878B919ECB7DC00487429 /* Sources */,
-				7E1878BA19ECB7DC00487429 /* Frameworks */,
-				7E1878BB19ECB7DC00487429 /* Headers */,
-				7E1878BC19ECB7DC00487429 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GlimpseXML;
-			productName = GlimpseXML;
-			productReference = 7E1878BE19ECB7DC00487429 /* GlimpseXML.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -179,10 +127,6 @@
 						DevelopmentTeam = 32Y52676KN;
 						ProvisioningStyle = Automatic;
 					};
-					7E1878BD19ECB7DC00487429 = {
-						CreatedOnToolsVersion = 6.1;
-						LastSwiftMigration = 0920;
-					};
 				};
 			};
 			buildConfigurationList = 7E1878B819ECB7DC00487429 /* Build configuration list for PBXProject "GlimpseXML" */;
@@ -198,7 +142,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7E1878BD19ECB7DC00487429 /* GlimpseXML */,
 				25D398CF2011C6E600B200BE /* XML Example */,
 			);
 		};
@@ -215,14 +158,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E1878BC19ECB7DC00487429 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FE42BA579EA8CE2DFF4BACB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XML Example/Pods-XML Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GlimpseXML/GlimpseXML.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GlimpseXML.framework",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XML Example/Pods-XML Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+		A3DCB09DF9405AE0B743E511 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XML Example/Pods-XML Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C149E69CD89DCB3F3E301276 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XML Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		25D398CC2011C6E600B200BE /* Sources */ = {
@@ -233,23 +223,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E1878B919ECB7DC00487429 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E1878DB19ECB82B00487429 /* GlimpseXML.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		25D398E12011C72900B200BE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E1878BD19ECB7DC00487429 /* GlimpseXML */;
-			targetProxy = 25D398E02011C72900B200BE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		25D398D62011C6E600B200BE /* MainMenu.xib */ = {
@@ -265,6 +239,7 @@
 /* Begin XCBuildConfiguration section */
 		25D398DC2011C6E600B200BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A17811E887A6B86F44AAA1E6 /* Pods-XML Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -304,6 +279,7 @@
 		};
 		25D398DD2011C6E600B200BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42E26DAC398FF9343ED50D5B /* Pods-XML Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -418,59 +394,6 @@
 			};
 			name = Release;
 		};
-		7E1878D519ECB7DC00487429 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREPROCESSOR_DEFINITIONS = GLIMPSEXML_FRAMEWORK;
-				HEADER_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/include/libxml2",
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-				);
-				INFOPLIST_FILE = GlimpseXML/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.glimpse.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "GlimpseXML/GlimpseXML-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		7E1878D619ECB7DC00487429 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREPROCESSOR_DEFINITIONS = GLIMPSEXML_FRAMEWORK;
-				HEADER_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/include/libxml2",
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-				);
-				INFOPLIST_FILE = GlimpseXML/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.glimpse.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "GlimpseXML/GlimpseXML-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -488,15 +411,6 @@
 			buildConfigurations = (
 				7E1878D219ECB7DC00487429 /* Debug */,
 				7E1878D319ECB7DC00487429 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E1878D419ECB7DC00487429 /* Build configuration list for PBXNativeTarget "GlimpseXML" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E1878D519ECB7DC00487429 /* Debug */,
-				7E1878D619ECB7DC00487429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

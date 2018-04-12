@@ -7,6 +7,7 @@
 //
 
 import libxml2
+import libxml2Glimpse
 
 private typealias DocumentPtr = UnsafePointer<xmlDoc>
 private typealias NodePtr = UnsafePointer<xmlNode>

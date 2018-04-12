@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'GlimpseXMLSwift'
+  s.name             = 'GlimpseXML'
   s.version          = '1.0.0'
   s.summary          = 'Fast DOM parser & serializer'
 
@@ -20,7 +20,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'GlimpseXML/GlimpseXML.swift'
+  s.resources = 'GlimpseXML/*.{modulemap,h}'
+  s.source_files = 'GlimpseXML/*.swift'
 
   s.libraries    = 'xml2'
   s.xcconfig     = { 'OTHER_LDFLAGS' => '-lxml2' }

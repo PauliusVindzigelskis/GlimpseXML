@@ -31,3 +31,6 @@ DerivedData
 
 # Quick
 Quick.framework.zip
+Podfile.lock
+Pods
+GlimpseXML.xcworkspace
