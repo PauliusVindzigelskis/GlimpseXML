@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 glimpse.io. All rights reserved.
 //
 
-import libxml2
-import libxml2Glimpse
+import libxmlGlimpse
 
 private typealias DocumentPtr = UnsafePointer<xmlDoc>
 private typealias NodePtr = UnsafePointer<xmlNode>

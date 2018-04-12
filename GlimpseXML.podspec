@@ -18,11 +18,15 @@ Pod::Spec.new do |s|
   s.author           = { 'Paulius Vindzigelskis' => 'p.vindzigelskis@gmail.com' }
   s.source           = { :git => 'https://github.com/PauliusVindzigelskis/GlimpseXML.git', :tag => s.version.to_s }
 
+  s.osx.deployment_target = '10.13'
   s.ios.deployment_target = '8.0'
+  
+  s.preserve_path = 'Modules/*'
+  s.source_files = 'GlimpseXML/*.{swift}'
 
-  s.resources = 'GlimpseXML/*.{modulemap,h}'
-  s.source_files = 'GlimpseXML/*.swift'
-
-  s.libraries    = 'xml2'
-  s.xcconfig     = { 'OTHER_LDFLAGS' => '-lxml2' }
+  s.library    = 'xml2'
+  
+  s.xcconfig      = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2',
+                      'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/GlimpseXML/Modules'
+  }
 end

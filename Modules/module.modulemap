@@ -1,0 +1,6 @@
+module libxmlGlimpse [system] {
+    link "xml2"
+    umbrella header "libxml2-glimpse.h"
+    export *
+    module * { export * }
+}

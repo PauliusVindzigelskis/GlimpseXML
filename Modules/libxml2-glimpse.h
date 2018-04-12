@@ -1,0 +1,11 @@
+#import <libxml2/libxml/xmlexports.h>
+#import <libxml2/libxml/xmlversion.h>
+#import <libxml2/libxml/parser.h>
+#import <libxml2/libxml/xmlIO.h>
+#import <libxml2/libxml/xinclude.h>
+#import <libxml2/libxml/tree.h>
+#import <libxml2/libxml/xmlreader.h>
+#import <libxml2/libxml/xpath.h>
+#import <libxml2/libxml/xpathinternals.h>
+#import <libxml2/libxml/xmlstring.h>
+#import <libxml2/libxml/HTMLParser.h>
