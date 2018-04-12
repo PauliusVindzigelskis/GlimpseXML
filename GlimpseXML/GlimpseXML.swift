@@ -66,8 +66,8 @@ public final class Document: Equatable, Hashable, CustomDebugStringConvertible {
     public func xpath(_ path: String, namespaces: [String:String]? = nil) throws -> [Node] {
         return try rootElement.xpath(path, namespaces: namespaces)
     }
-
-    public func serialize(indent: Bool = false, encoding: String? = "utf8") -> String {
+    
+    public func serialize(_ indent: Bool = false, encoding: String? = "utf8") -> String {
         var buf: UnsafeMutablePointer<xmlChar>? = nil
         var buflen: Int32 = 0
         let format: Int32 = indent ? 1 : 0
@@ -80,10 +80,8 @@ public final class Document: Equatable, Hashable, CustomDebugStringConvertible {
 
         var string: String = ""
         if buflen >= 0 {
-            if let str = buf?.withMemoryRebound(to: Int8.self, capacity: Int(buflen), { String.init(cString: $0) }) {
-                string = str
-            }
-            buf?.deallocate()
+            string = String(cString: buf!)
+            buf?.deallocate(capacity: Int(buflen))
         }
 
         return string
@@ -176,17 +174,17 @@ public final class Document: Equatable, Hashable, CustomDebugStringConvertible {
                 doc = htmlCtxtReadMemory(ctx, data, length, nil, nil, opts)
             }
         }
-
-        let xmlErr = (ctx?.pointee.lastError)!
-
+        
+        let err = errorFromXmlError((ctx?.pointee.lastError)!)
+        
         if let doc = doc {
+            //if doc != nil { // unwrapped pointer can still be nil
             let document = Document(doc: DocumentPtr(doc), owns: true)
             return document
+            //}
         }
-        else {
-            let err = errorFromXmlError(xmlErr)
-            throw err
-        }
+        
+        throw err
     }
 }
 
@@ -208,7 +206,7 @@ public final class Node: Equatable, Hashable, CustomDebugStringConvertible {
 
     public init(doc: Document? = nil, cdata: String) {
         self.ownsNode = doc == nil
-        self.nodePtr = NodePtr(xmlNewCDataBlock(doc == nil ? nil : castDoc(doc!.docPtr), cdata, Int32(cdata.utf8.count)))
+        self.nodePtr = NodePtr(xmlNewCDataBlock(doc == nil ? nil : castDoc(doc!.docPtr), cdata, Int32(cdata.utf8CString.count)))
     }
 
     public init(doc: Document? = nil, text: String) {
@@ -218,11 +216,10 @@ public final class Node: Equatable, Hashable, CustomDebugStringConvertible {
 
     public init(doc: Document? = nil, name: String? = nil, namespace: Namespace? = nil, attributes: [(name: String, value: String)]? = nil, text: String? = nil, children: [Node]? = nil) {
         self.ownsNode = doc == nil
-
-        let xmlNodePtr = xmlNewDocNode(doc == nil ? nil : castDoc(doc!.docPtr), namespace == nil ? nil : castNs(namespace!.nsPtr), name ?? "", "")!
-        xmlNodeAddContent(xmlNodePtr, text) // Escape special characters.
-        self.nodePtr = NodePtr(xmlNodePtr)
-
+        
+        
+        self.nodePtr = NodePtr(xmlNewDocNode(doc == nil ? nil : castDoc(doc!.docPtr), namespace == nil ? nil : castNs(namespace!.nsPtr), name ?? "", text ?? ""))
+        
         let _ = attributes?.map { self.updateAttribute($0, value: $1, namespace: namespace) }
 
         if let children = children {
@@ -442,9 +439,8 @@ public final class Node: Equatable, Hashable, CustomDebugStringConvertible {
     }
 
     /// Returns this node as an XML string with optional indentation
-    public func serialize(indent: Bool = false) -> String {
+    public func serialize(_ indent: Bool = false) -> String {
         let buf = xmlBufferCreate()
-
         let level: Int32 = 0
         let format: Int32 = indent ? 1 : 0
 
@@ -453,8 +449,9 @@ public final class Node: Equatable, Hashable, CustomDebugStringConvertible {
         var string: String = ""
         if result >= 0 {
             let buflen: Int32 = xmlBufferLength(buf)
-            if let str = buf?.pointee.content.withMemoryRebound(to: Int8.self, capacity: Int(buflen), { String.init(cString: $0) }) {
-                string = str
+            let str: UnsafePointer<CUnsignedChar> = xmlBufferContent(buf)
+            if buflen >= 0 {
+                string = String(cString: UnsafePointer(str))
             }
         }
 
@@ -546,11 +543,31 @@ public func +=(lhs: Node, rhs: Node) -> Node {
 
 private func errorFromXmlError(_ error: xmlError)->XMLError {
     let level = errorLevelFromXmlErrorLevel(error.level)
-    let message = (error.message == nil) ? "" : String(cString: error.message)
-    let file = (error.file == nil) ? "" :String(cString: error.file)
-    let str1 = (error.str1 == nil) ? "" :String(cString: error.str1)
-    let str2 = (error.str2 == nil) ? "" :String(cString: error.str2)
-    let str3 = (error.str3 == nil) ? "" :String(cString: error.str3)
+    var message:String = ""
+    var file:String = ""
+    var str1:String = ""
+    var str2:String = ""
+    var str3:String = ""
+    if error.message != nil {
+        message = String(cString: error.message)
+    }
+    
+    if error.file != nil {
+        file = String(cString: error.file)
+    }
+    
+    if error.str1 != nil {
+        str1 = String(cString: error.str1)
+    }
+    
+    if error.str2 != nil {
+        str2 = String(cString: error.str2)
+    }
+    
+    if error.str3 != nil {
+        str3 = String(cString: error.str3)
+    }
+    
     return XMLError(domain: XMLError.ErrorDomain.fromErrorDomain(error.domain), code: error.code, message: message, level: level, file: file, line: error.line, str1: str1, str2: str2, str3: str3, int1: error.int1, column: error.int2)
 }
 
@@ -761,13 +778,3 @@ private func stringFromXMLString(_ string: UnsafePointer<xmlChar>, free: Bool = 
     return str
 }
 
-private func stringFromFixedCString(_ cs: UnsafeBufferPointer<CChar>) -> String {
-    let count = cs.count + 1
-    let ptr = UnsafeMutablePointer<CChar>.allocate(capacity: count)
-    let buf = UnsafeMutableBufferPointer.init(start: ptr, count: count)
-
-    let result = buf.initialize(from: cs + [0])
-    let charArr = Array<CChar>(result.0)
-    let str = String.init(cString: charArr)
-    return str
-}
