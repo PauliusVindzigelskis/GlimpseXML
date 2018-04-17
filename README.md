@@ -1,5 +1,6 @@
 # GlimpseXML
 
+[![Version](https://img.shields.io/cocoapods/v/GlimpseXML.svg)](http://cocoapods.org/pods/GlimpseXML)
 [![Build Status](https://travis-ci.org/glimpseio/GlimpseXML.svg?branch=master)](https://travis-ci.org/glimpseio/GlimpseXML)
 
 Fast DOM parser & serializer in pure Swift for iOS & Mac
