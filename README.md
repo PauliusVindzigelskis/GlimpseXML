@@ -106,6 +106,12 @@ Which will output:
 
 ### Setting up GlimpseXML
 
+## Cocoapod
+
+    pod 'GlimpseXML'
+
+## Manual
+
 `GlimpseXML` is a single cross-platform iOS & Mac Framework. To set it up in your project, simply add it as a github submodule, drag the `GlimpseXML.xcodeproj` into your own project file, add `GlimpseXML.framework` to your target's dependencies, and `import GlimpseXML` from any Swift file that should use it.
 
 **Set up Git submodule**
