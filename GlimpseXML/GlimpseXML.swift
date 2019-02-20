@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 glimpse.io. All rights reserved.
 //
 
-import libxmlGlimpse
+//import libxmlGlimpse
+import libxml2
 
 private typealias DocumentPtr = UnsafePointer<xmlDoc>
 private typealias NodePtr = UnsafePointer<xmlNode>
@@ -81,7 +82,7 @@ public final class Document: Equatable, Hashable, CustomDebugStringConvertible {
         var string: String = ""
         if buflen >= 0 {
             string = String(cString: buf!)
-            buf?.deallocate(capacity: Int(buflen))
+            buf?.deallocate()
         }
 
         return string
@@ -644,7 +645,7 @@ public enum XMLResult<T>: CustomDebugStringConvertible {
 
 /// Wrapper for a generic value; workaround for Swift enum generic deficiency
 open class XMLValue<T> {
-    open let value: T
+    public let value: T
     public init(_ value: T) { self.value = value }
 }
 

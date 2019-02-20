@@ -1,7 +1,6 @@
-platform :osx, '10.13'
+platform :osx, '10.14'
 use_frameworks!
 
 target 'XML Example' do
     pod 'GlimpseXML', :path => '.'
-#    pod 'Kanna' 
 end

@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GlimpseXML'
-  s.version          = '1.0.3'
-  s.swift_version    = '3.0'
+  s.version          = '1.1.0'
+  s.swift_version    = '4.2'
   s.summary          = 'Fast DOM parser & serializer'
 
   s.description      = 'Fast DOM parser & serializer in pure Swift for iOS & Mac'
@@ -27,7 +27,8 @@ Pod::Spec.new do |s|
 
   s.library    = 'xml2'
   
-  s.xcconfig      = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2',
-                      'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/GlimpseXML/Modules'
-  }
+  s.xcconfig      = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2'}
+  #,
+  #                    'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/GlimpseXML/Modules'
+  #}
 end

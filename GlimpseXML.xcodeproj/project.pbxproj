@@ -101,7 +101,6 @@
 				25D398CD2011C6E600B200BE /* Frameworks */,
 				25D398CE2011C6E600B200BE /* Resources */,
 				5FE42BA579EA8CE2DFF4BACB /* [CP] Embed Pods Frameworks */,
-				A3DCB09DF9405AE0B743E511 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,7 +166,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XML Example/Pods-XML Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-XML Example/Pods-XML Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GlimpseXML/GlimpseXML.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -176,22 +175,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XML Example/Pods-XML Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A3DCB09DF9405AE0B743E511 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XML Example/Pods-XML Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XML Example/Pods-XML Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C149E69CD89DCB3F3E301276 /* [CP] Check Pods Manifest.lock */ = {
@@ -273,7 +257,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -305,7 +289,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "me.venj.XML-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

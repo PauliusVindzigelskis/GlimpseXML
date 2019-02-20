@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 ]),
             ])
         let xml = Document(root: node)
-        print(xml.serialize(indent: true))
+        print(xml.serialize(true))
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
