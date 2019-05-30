@@ -19,7 +19,7 @@ private func castNs(_ ns: NamespacePtr)->xmlNsPtr { return UnsafeMutablePointer<
 
 
 /// The root of an XML Document, containing a single root element
-public final class Document: Equatable, Hashable, CustomDebugStringConvertible {
+public final class Document: Hashable, CustomDebugStringConvertible {
     fileprivate let docPtr: DocumentPtr
     fileprivate var ownsDoc: Bool
 
@@ -56,7 +56,11 @@ public final class Document: Equatable, Hashable, CustomDebugStringConvertible {
             xmlFreeDoc(castDoc(docPtr))
         }
     }
-
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(0)
+    }
+    
     public var hashValue: Int { return 0 }
 
     /// Create a curried xpath finder with the given namespaces
@@ -238,6 +242,11 @@ public final class Node: Equatable, Hashable, CustomDebugStringConvertible {
         }
     }
 
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name?.hashValue ?? 0)
+    }
+    
     public var hashValue: Int { return name?.hashValue ?? 0 }
 
     /// Returns a deep copy of the current node
@@ -484,7 +493,7 @@ public final class Node: Equatable, Hashable, CustomDebugStringConvertible {
             xmlDocSetRootElement(nodeDoc, topParent)
 
             // release our temporary document when we are done
-            defer {
+            do {
                 xmlUnlinkNode(topParent)
                 xmlSetTreeDoc(topParent, nil)
                 xmlFreeDoc(nodeDoc)
