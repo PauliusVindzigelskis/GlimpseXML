@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'GlimpseXML'
   s.version          = '1.1.0'
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.0'
   s.summary          = 'Fast DOM parser & serializer'
 
   s.description      = 'Fast DOM parser & serializer in pure Swift for iOS & Mac'
